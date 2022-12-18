@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
             child: FloatingActionButton(
               child: Icon(Icons.restart_alt_rounded),
               onPressed: () {
-                c.incrementar();
+                c.resetear();
                 Get.snackbar('Aviso', 'Contador reseteado');
               },
             ),
@@ -54,7 +54,7 @@ class HomePage extends StatelessWidget {
             child: FloatingActionButton(
               child: Icon(Icons.add),
               onPressed: () {
-                c.resetear();
+                c.incrementar();
               },
             ),
           )
