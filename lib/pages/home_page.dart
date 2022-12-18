@@ -4,7 +4,9 @@ import 'package:get/get.dart';
 import '../controller/getx_controller.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
+  var c = Get.put(Controller());
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class HomePage extends StatelessWidget {
             child: FloatingActionButton(
               child: Icon(Icons.restart_alt_rounded),
               onPressed: () {
-                Get.find<Controller>().resetear();
+                c.incrementar();
                 Get.snackbar('Aviso', 'Contador reseteado');
               },
             ),
@@ -43,7 +45,7 @@ class HomePage extends StatelessWidget {
             child: FloatingActionButton(
               child: Icon(Icons.remove),
               onPressed: () {
-                Get.find<Controller>().restar();
+                c.restar();
               },
             ),
           ),
@@ -52,7 +54,7 @@ class HomePage extends StatelessWidget {
             child: FloatingActionButton(
               child: Icon(Icons.add),
               onPressed: () {
-                Get.find<Controller>().incrementar();
+                c.resetear();
               },
             ),
           )
